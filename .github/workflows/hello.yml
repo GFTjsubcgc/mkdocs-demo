@@ -1,0 +1,19 @@
+name: Hello Action
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Say hello
+        run: echo "Hello GitHub Actions!"
+
+      - name: Show system info
+        run: uname -a
